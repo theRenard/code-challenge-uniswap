@@ -53,7 +53,6 @@ export default {
   },
 
   serverMiddleware: [
-    // { path: "/api", handler: "~/server-middleware/rest.js" },
     '~/middleware/redirects.js',
   ],
 

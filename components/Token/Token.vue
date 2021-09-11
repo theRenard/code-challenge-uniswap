@@ -1,5 +1,6 @@
 <template>
   <div class="token">
+    {{ this.$store.state.tokens.tokens }}
     <div class="token__header">
     <Token-Button />
     <Token-Input />
@@ -18,6 +19,7 @@ import { Vue, Component } from 'nuxt-property-decorator';
 export default class Planet extends Vue {
 
   mounted(): void {
+    console.log(this.$store.state.tokens);
   }
 
   beforeDestroy(): void {
