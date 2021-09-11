@@ -15,6 +15,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/scss/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -28,6 +29,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -49,6 +51,11 @@ export default {
       lang: 'en'
     }
   },
+
+  serverMiddleware: [
+    // { path: "/api", handler: "~/server-middleware/rest.js" },
+    '~/middleware/redirects.js',
+  ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
