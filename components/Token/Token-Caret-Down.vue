@@ -10,7 +10,7 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator';
 
 @Component({
 })
-export default class TokenButton extends Vue {
+export default class TokenCaretDown extends Vue {
   @Prop({
     type: String,
     required: true

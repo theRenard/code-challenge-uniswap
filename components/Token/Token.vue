@@ -16,18 +16,41 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator';
 import { Token } from '@/types/token';
 
 @Component
-export default class Planet extends Vue {
+export default class TokenComponent extends Vue {
 
   @Prop({
     type: Object as Vue.PropType<Token>,
     required: false
   })
-  public token!: Token | null;
+  public token!: Token;
 
-  mounted(): void {
-  }
-
-  beforeDestroy(): void {
-  }
 }
 </script>
+
+<style lang="scss" scoped>
+.token {
+    border-radius: 20px;
+    border: 1px solid rgb(237, 238, 242);
+    background-color: rgb(247, 248, 250);
+    width: initial;
+    &__header {
+      display: flex;
+      flex-flow: row nowrap;
+      -webkit-box-align: center;
+      align-items: center;
+      padding: 1rem 1rem 0.75rem;
+    }
+    &__footer {
+      -webkit-box-pack: end;
+      justify-content: flex-end;
+      display: flex;
+      flex-flow: row nowrap;
+      -webkit-box-align: center;
+      align-items: center;
+      color: rgb(0, 0, 0);
+      font-size: 0.75rem;
+      line-height: 1rem;
+      padding: 0px 1rem 1rem;
+    }
+}
+</style>

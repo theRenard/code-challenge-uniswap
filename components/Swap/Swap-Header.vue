@@ -2,10 +2,10 @@
   <div class="swap-header">
     <div class="swap-header__container">
       <div class="swap-header__container-left">
-        Swap
+        <span>Swap</span>
       </div>
       <div class="swap-header__container-right">
-        Gear
+        <Swap-Gear />
       </div>
     </div>
   </div>
@@ -17,15 +17,19 @@
       width: 100%;
       color: rgb(86, 90, 105);
       &__container {
-        width: 100%;
-        display: flex;
-        padding: 0px;
-        -webkit-box-align: center;
-        align-items: center;
-        -webkit-box-pack: start;
-        justify-content: flex-start;
+        @include center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
       }
       &__container-left {
+        span {
+          box-sizing: border-box;
+          margin: 0px;
+          min-width: 0px;
+          font-weight: 500;
+          font-size: 16px;
+          color: rgb(0, 0, 0);
+        }
       }
       &__container-right {
       }

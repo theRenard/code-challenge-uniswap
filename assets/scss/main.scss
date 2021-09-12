@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "Inter var";
+    font-weight: 100 900;
+    font-style: normal;
+    font-named-instance: "Regular";
+    // sorry to steal this font like that, but it's the only one I could find
+    src:
+        url(~assets/fonts/Inter/Inter-roman.woff2)
+        format("woff2 supports variations(gvar)"),
+        url(~assets/fonts/Inter/Inter-roman.woff2)
+        format("woff2-variations"),
+        url(~assets/fonts/Inter/Inter-roman.woff2)
+        format("woff2")
+  }
+
 * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;

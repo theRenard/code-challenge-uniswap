@@ -1,6 +1,7 @@
 import {
   SET_TOKENS,
   SET_TOKEN_ONE,
+  SET_TOKEN_TWO,
 
 } from './mutation-types';
 import tokens from '~/stubs/compound.tokenlist.js';
@@ -27,4 +28,11 @@ export async function fetchTokens({ commit }) {
 export function setDefaultTokens({ commit }) {
   const payload = fakeToken;
   commit(SET_TOKEN_ONE, { payload });
+}
+
+export function swapUpperAndLowerTokens({ state, commit }) {
+  const tokenOne = state.token_one;
+  const tokenTwo = state.token_two;
+  commit(SET_TOKEN_ONE, { payload: tokenTwo });
+  commit(SET_TOKEN_TWO, { payload: tokenOne });
 }
