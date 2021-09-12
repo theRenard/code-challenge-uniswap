@@ -1,7 +1,7 @@
 <template>
   <div class="swap-tokens">
-    <Token :token="$store.state.tokens.token_one" />
+    <Token :token="$store.getters['tokens/tokenOne']" />
     <Swap-Swapper />
-    <Token :token="$store.state.tokens.token_two" />
+    <Token :token="$store.getters['tokens/tokenTwo']" />
   </div>
 </template>
