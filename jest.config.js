@@ -16,6 +16,7 @@ module.exports = {
     '.*\\.(vue)$': 'vue-jest'
   },
   collectCoverage: true,
+  passWithNoTests: true, // no tests right now
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue'

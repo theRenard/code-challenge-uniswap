@@ -18,6 +18,13 @@ export default {
     '~/assets/scss/main.scss'
   ],
 
+  styleResources: {
+    scss: [
+      '~/assets/scss/vars/*.scss',
+      '~/assets/scss/abstracts/_mixins.scss' // use underscore "_" & also file extension ".scss"
+      ]
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
   ],
@@ -28,6 +35,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
+    '@nuxtjs/style-resources',
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
   ],
