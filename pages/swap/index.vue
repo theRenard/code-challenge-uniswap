@@ -11,10 +11,10 @@ export default class PageSwap extends Vue {
 
   async fetch() {
     await this.$store.dispatch('tokens/fetchTokens');
+    // this.$store.dispatch('tokens/setDefaultTokens');
   }
 
   mounted(): void {
-    this.$store.dispatch('tokens/setDefaultTokens');
   }
 
   beforeDestroy(): void {

@@ -11,7 +11,7 @@ import { Vue, Component } from 'nuxt-property-decorator';
 @Component
 export default class SwapGear extends Vue {
   toggle() {
-    console.log('toggle');
+    console.log(this.$store);
   }
 }
 </script>

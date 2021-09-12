@@ -1,5 +1,5 @@
 <template>
-  <button class="swap-button">
+  <button class="swap-button" @click="$store.dispatch('tokens/setDefaultTokens');">
     <span>Enter an amount</span>
   </button>
 </template>
@@ -53,7 +53,7 @@ export default class SwapButton extends Vue {
     transition: transform 450ms ease 0s;
     transform: perspective(1px) translateZ(0px);
     cursor: auto;
-    pointer-events: none;
+    // pointer-events: none;
     background-color: rgb(237, 238, 242);
     color: rgb(86, 90, 105);
     cursor: auto;
