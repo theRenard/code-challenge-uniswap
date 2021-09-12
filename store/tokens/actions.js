@@ -1,7 +1,7 @@
 import {
   SET_TOKENS
 } from './mutation-types';
-import tokens from '@/stubs/tokens.js';
+import tokens from '~/stubs/compound.tokenlist.js';
 
 export async function fetchTokens({ commit }) {
   // sure, no errors handling here :P
