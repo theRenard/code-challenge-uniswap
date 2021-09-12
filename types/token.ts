@@ -1,4 +1,4 @@
-type PureToken = {
+export type Token = {
   chainId: number;
   address: string;
   name: string;
@@ -9,5 +9,3 @@ type PureToken = {
     optimismBridgeAddress: string;
   }
 };
-
-export type Token = PureToken | null;

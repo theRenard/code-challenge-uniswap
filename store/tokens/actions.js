@@ -31,8 +31,8 @@ export function setDefaultTokens({ commit }) {
 }
 
 export function swapUpperAndLowerTokens({ state, commit }) {
-  const tokenOne = state.token_one;
-  const tokenTwo = state.token_two;
+  const tokenOne = JSON.parse(JSON.stringify(state.token_one));
+  const tokenTwo = JSON.parse(JSON.stringify(state.token_two));
   commit(SET_TOKEN_ONE, { payload: tokenTwo });
   commit(SET_TOKEN_TWO, { payload: tokenOne });
 }

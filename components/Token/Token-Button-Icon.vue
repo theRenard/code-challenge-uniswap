@@ -1,7 +1,6 @@
 <template>
   <div>
     <img
-      v-if="token"
       class="token-button__icon"
       :alt="alt"
       :src="src"
@@ -23,11 +22,11 @@ export default class TokenButtonIcon extends Vue {
   public token!: Token;
 
   get alt(): string {
-    return `${this?.token?.symbol} logo`;
+    return `${this.token.symbol} logo`;
   }
 
   get src(): string | undefined {
-    return this?.token?.logoURI;
+    return this.token.logoURI;
   }
 }
 </script>

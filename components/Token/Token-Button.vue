@@ -1,6 +1,6 @@
 <template>
   <button class="token-button" :class="buttonClass">
-    <Token-Button-Icon :token="token" />
+    <Token-Button-Icon v-if="!isEmtpyToken" :token="token" />
     <div class="token-button__text">
       {{ tokenName }}
     </div>
@@ -21,18 +21,22 @@ export default class TokenButton extends Vue {
   })
   public token!: Token;
 
+  get isEmtpyToken(): boolean {
+    return Boolean(this.token.address) === false;
+  }
+
   get tokenName() {
     return this?.token?.symbol || 'Select a token';
   }
 
   get buttonClass() {
     return {
-      'token-button--unselected': !this.token,
+      'token-button--unselected': this.isEmtpyToken,
     };
   }
 
   get caretColor() {
-    return this.token ? '#000' : '#fff';
+    return this.isEmtpyToken ? '#fff' : '#000';
   }
 
 }
