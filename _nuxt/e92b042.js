@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{340:function(n,t,e){"use strict";e.r(t);var l=e(18),component=Object(l.a)({},(function(){var n=this,t=n.$createElement;return(n._self._c||t)("button",[n._v("Enter an amount")])}),[],!1,null,null,null);t.default=component.exports}}]);
