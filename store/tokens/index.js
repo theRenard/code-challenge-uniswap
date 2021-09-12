@@ -4,8 +4,28 @@ import mutations from './mutations';
 
 const state = () => ({
   tokens: {},
-  token_one: null,
-  token_two: null,
+  token_one: {
+    chainId: 0,
+    address: '',
+    name: '',
+    symbol: '',
+    decimals: 0,
+    logoURI: '',
+    extensions: {
+      optimismBridgeAddress: '',
+    }
+  },
+  token_two: {
+    chainId: 0,
+    address: '',
+    name: '',
+    symbol: '',
+    decimals: 0,
+    logoURI: '',
+    extensions: {
+      optimismBridgeAddress: '',
+    }
+  },
 });
 
 export default {

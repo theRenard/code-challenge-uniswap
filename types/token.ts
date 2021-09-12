@@ -1,4 +1,4 @@
-export type Token = {
+type PureToken = {
   chainId: number;
   address: string;
   name: string;
@@ -8,4 +8,6 @@ export type Token = {
   extensions?: {
     optimismBridgeAddress: string;
   }
-} | null;
+};
+
+export type Token = PureToken | null;
