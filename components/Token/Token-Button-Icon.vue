@@ -1,10 +1,12 @@
 <template>
-  <img
-    v-if="token"
-    class="token-button__icon"
-    :alt="alt"
-    :src="src"
-    >
+  <div>
+    <img
+      v-if="token"
+      class="token-button__icon"
+      :alt="alt"
+      :src="src"
+      >
+  </div>
 </template>
 
 <script lang="ts">
