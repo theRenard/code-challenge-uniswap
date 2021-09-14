@@ -1,5 +1,9 @@
 <template>
   <div class="token-selector-list">
+    <Token-Selector-List-Element
+      v-for="token of $store.getters['tokens/tokensFromActiveExchanges']"
+      :key="token.address"
+      :token="token" />
   </div>
 </template>
 

@@ -13,7 +13,7 @@
 <script lang="ts">
 
 import { Vue, Component, Prop } from 'nuxt-property-decorator';
-import { Token } from '@/types/token';
+import { Token } from '@/types/Exchange-Models';
 
 @Component
 export default class TokenComponent extends Vue {

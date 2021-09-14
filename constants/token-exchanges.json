@@ -1,0 +1,42 @@
+{
+  "gemini": {
+    "URI": "https://www.gemini.com/uniswap/manifest.json",
+    "default": true,
+    "active": true
+
+  },
+  "compound": {
+    "URI": "https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json",
+    "active": false
+
+  },
+  "set": {
+    "URI": "https://raw.githubusercontent.com/SetProtocol/uniswap-tokenlist/main/set.tokenlist.json",
+    "active": false
+
+  },
+  "roll": {
+    "URI": "https://app.tryroll.com/tokens.json",
+    "active": false
+
+  },
+  "geko": {
+    "URI": "https://tokens.coingecko.com/uniswap/all.json",
+    "active": false
+
+  },
+  "arbitrum": {
+    "URI": "https://bridge.arbitrum.io/token-list-42161.json",
+    "active": false
+
+  },
+  "optimism": {
+    "URI": "https://static.optimism.io/optimism.tokenlist.json",
+    "active": false
+
+  },
+  "ba": {
+    "URI": "https://raw.githubusercontent.com/The-Blockchain-Association/sec-notice-list/master/ba-sec-list.json",
+    "active": false
+  }
+}

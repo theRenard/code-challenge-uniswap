@@ -1,10 +1,8 @@
 import {
-  SET_TOKENS,
   SET_TOKEN_ONE,
   SET_TOKEN_TWO,
 
 } from './mutation-types';
-import tokens from '~/stubs/compound.tokenlist.js';
 
 const fakeToken = {
   "chainId": 1,
@@ -15,19 +13,28 @@ const fakeToken = {
   "logoURI": "https://assets.coingecko.com/coins/images/11004/thumb/sw_ethbtc_set.png?1587089906"
 }
 
-export async function fetchTokens({ commit }) {
-  // sure, no errors handling here :P
-  try {
-    const payload = await Promise.resolve(tokens);
-    commit(SET_TOKENS, { payload });
-  } catch (error) {
-    console.error(error);
-  }
-}
+// export async function fetchTokens({ commit }) {
+//   // sure, no errors handling here :P
+//   try {
+//     const payload = await Promise.resolve(tokens);
+//     commit(SET_TOKENS, { payload });
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
-export function setDefaultTokens({ commit }) {
+export function setDefaultToken({ commit }) {
   const payload = fakeToken;
   commit(SET_TOKEN_ONE, { payload });
+}
+
+export function getTokensFromExchanges({ state, commit }) {
+  const promises = Object.entries(state.tokenExchanges).map(([name, conf]) => {
+    return this.$axios
+      .get(conf.URI)
+      .then(res => { commit('SET_EXCHANGE_DATA', { exchange: name, payload: res.data }); });
+  })
+  return Promise.all(promises);
 }
 
 export function swapUpperAndLowerTokens({ state, commit }) {

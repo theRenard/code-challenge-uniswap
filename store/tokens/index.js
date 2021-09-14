@@ -1,9 +1,10 @@
 import * as actions from './actions';
 import * as getters from './getters';
 import mutations from './mutations';
+import tokenExchanges from '~/constants/token-exchanges.json';
 
 const state = () => ({
-  tokens: {},
+  tokenExchanges,
   token_one: {
     chainId: 0,
     address: '',

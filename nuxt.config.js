@@ -60,6 +60,12 @@ export default {
     }
   },
 
+  extend(config, ctx) {
+    if (ctx.isDev) {
+      config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map';
+    }
+  },
+
   serverMiddleware: [
     '~/middleware/redirects.js',
   ],
