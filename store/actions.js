@@ -9,7 +9,7 @@ import {
   SET_SEARCH_STRING
 } from './mutation-types';
 
-const fakeToken = {
+const defaultToken = {
   "chainId": 1,
   "address": "0x253444bd9ecf11e5516d6d00974e91c9f0857ccb",
   "name": "ETH BTC Long Only A",
@@ -18,18 +18,8 @@ const fakeToken = {
   "logoURI": "https://assets.coingecko.com/coins/images/11004/thumb/sw_ethbtc_set.png?1587089906"
 }
 
-// export async function fetchTokens({ commit }) {
-//   // sure, no errors handling here :P
-//   try {
-//     const payload = await Promise.resolve(tokens);
-//     commit(SET_TOKENS, { payload });
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
 export function setDefaultToken({ commit }) {
-  const payload = fakeToken;
+  const payload = defaultToken;
   commit(SET_TOKEN_ONE, { payload });
 }
 
@@ -68,9 +58,4 @@ export function openExchangeSelector({ commit }) {
 export function backToTokenSelector({ commit }) {
   commit(CLOSE_EXCHANGE_SELECTOR);
   commit(OPEN_TOKEN_SELECTOR);
-}
-
-export function assignNewToken({ commit }, token) {
-  commit(CLOSE_TOKEN_SELECTOR);
-  console.log(token);
 }

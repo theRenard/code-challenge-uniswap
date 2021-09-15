@@ -12,19 +12,8 @@ import { Vue, Component } from 'nuxt-property-decorator';
 
 @Component
 export default class PageSwap extends Vue {
-
-  async fetch() {
-    // await this.$store.dispatch('fetchTokens');
-    await this.$store.dispatch('getTokensFromExchanges');
-    console.log(this.$store.state.tokenExchanges.gemini);
-    // this.$store.dispatch('setDefaultToken');
-  }
-
   mounted(): void {
-  }
-
-  beforeDestroy(): void {
+    this.$store.dispatch('getTokensFromExchanges');
   }
 }
 </script>
-
