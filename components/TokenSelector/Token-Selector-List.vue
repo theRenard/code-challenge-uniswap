@@ -1,8 +1,8 @@
 <template>
   <div class="token-selector-list">
     <Token-Selector-List-Element
-      v-for="token of $store.getters.searchedTokens"
-      :key="token.address"
+      v-for="(token, i) of $store.getters.searchedTokens"
+      :key="`${token.address}_${i}`"
       :token="token" />
   </div>
 </template>

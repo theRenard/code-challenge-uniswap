@@ -5,7 +5,8 @@ import {
   CLOSE_TOKEN_SELECTOR,
   OPEN_EXCHANGE_SELECTOR,
   CLOSE_EXCHANGE_SELECTOR,
-  SET_TOKEN_POSITION
+  SET_TOKEN_POSITION,
+  SET_SEARCH_STRING
 } from './mutation-types';
 
 const fakeToken = {
@@ -52,6 +53,11 @@ export function swapUpperAndLowerTokens({ state, commit }) {
 export function openTokenSelector({ commit }, token) {
   commit(OPEN_TOKEN_SELECTOR);
   commit(SET_TOKEN_POSITION, { payload: token });
+}
+
+export function closeTokenSelector({ commit }) {
+  commit(CLOSE_TOKEN_SELECTOR);
+  commit(SET_SEARCH_STRING, { payload: '' });
 }
 
 export function openExchangeSelector({ commit }) {
