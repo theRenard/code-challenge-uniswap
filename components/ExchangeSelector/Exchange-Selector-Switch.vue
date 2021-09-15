@@ -1,32 +1,20 @@
 <template>
-  <div class="token-selector-search">
-    <input
-      id="token-search-input"
-      v-model="searchString"
-      type="text"
-      placeholder="Search name or paste address"
-      autocomplete="off" value="">
+  <div class="exchange-selector-switch">
+
   </div>
 </template>
 
 <script lang="ts">
 
-import { Vue, Component, Watch } from 'nuxt-property-decorator';
+import { Vue, Component } from 'nuxt-property-decorator';
 
 @Component
-export default class TokenSelectorSearch extends Vue {
-  searchString = '';
-
-  @Watch('searchString')
-  onSearch(val: string) {
-    this.$store.commit('SET_SEARCH_STRING', { payload: val });
-  }
-
+export default class ExchangeSelectorSwitch extends Vue {
 }
 </script>
 
 <style lang="scss" scoped>
-  .token-selector-search {
+  .exchange-selector-switch {
     @include center;
     input {
       position: relative;

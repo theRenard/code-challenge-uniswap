@@ -1,7 +1,11 @@
 import {
   SET_TOKEN_ONE,
   SET_TOKEN_TWO,
-
+  OPEN_TOKEN_SELECTOR,
+  CLOSE_TOKEN_SELECTOR,
+  OPEN_EXCHANGE_SELECTOR,
+  CLOSE_EXCHANGE_SELECTOR,
+  SET_TOKEN_POSITION
 } from './mutation-types';
 
 const fakeToken = {
@@ -42,4 +46,25 @@ export function swapUpperAndLowerTokens({ state, commit }) {
   const tokenTwo = JSON.parse(JSON.stringify(state.token_two));
   commit(SET_TOKEN_ONE, { payload: tokenTwo });
   commit(SET_TOKEN_TWO, { payload: tokenOne });
+}
+
+
+export function openTokenSelector({ commit }, token) {
+  commit(OPEN_TOKEN_SELECTOR);
+  commit(SET_TOKEN_POSITION, { payload: token });
+}
+
+export function openExchangeSelector({ commit }) {
+  commit(CLOSE_TOKEN_SELECTOR);
+  commit(OPEN_EXCHANGE_SELECTOR);
+}
+
+export function backToTokenSelector({ commit }) {
+  commit(CLOSE_EXCHANGE_SELECTOR);
+  commit(OPEN_TOKEN_SELECTOR);
+}
+
+export function assignNewToken({ commit }, token) {
+  commit(CLOSE_TOKEN_SELECTOR);
+  console.log(token);
 }

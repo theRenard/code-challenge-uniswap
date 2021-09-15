@@ -1,6 +1,7 @@
 <template>
   <div class="token-selector-list-element" @click="clickHandler">
     <img
+      v-if="token.logoURI"
       class="token-selector-list-element__img"
       :alt="token.name"
       :src="token.logoURI">
@@ -34,9 +35,9 @@ export default class TokenSelectorListElement extends Vue {
   public token!: Token;
 
   public clickHandler() {
-    const position = this.$store.state.selector.token_position;
-    this.$store.commit('tokens/SET_TOKEN', { position, payload: this.token });
-    this.$store.commit('selector/CLOSE_SELECTOR');
+    const position = this.$store.state.token_position;
+    this.$store.commit('SET_TOKEN', { position, payload: this.token });
+    this.$store.commit('CLOSE_TOKEN_SELECTOR');
   }
 }
 </script>
@@ -51,6 +52,12 @@ export default class TokenSelectorListElement extends Vue {
     cursor: pointer;
     opacity: 1;
     width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background-color: rgb(237, 238, 242);
+    }
     &__img {
       display: block;
       vertical-align: middle;

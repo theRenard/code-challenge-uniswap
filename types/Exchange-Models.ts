@@ -1,12 +1,3 @@
-export type ExchangeConfig = {
-  [key: string]: {
-    name: string,
-    URI: string,
-    default?: boolean;
-    active: boolean;
-  }
-}
-
 export interface Token {
   chainId:  number;
   address:  string;
@@ -29,4 +20,15 @@ export interface ExchangeData {
   timestamp: string;
   tokens:    Token[];
   version:   Version;
+}
+
+
+export type Exchange = {
+  [key: string]: {
+    name: string,
+    URI: string,
+    default?: boolean;
+    active: boolean;
+    data?: ExchangeData
+  }
 }

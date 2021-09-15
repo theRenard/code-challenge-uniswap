@@ -2,6 +2,7 @@
   <div class="swap-page">
    <Swap-Container />
    <Token-Selector />
+   <Exchange-Selector />
   </div>
 </template>
 
@@ -13,10 +14,10 @@ import { Vue, Component } from 'nuxt-property-decorator';
 export default class PageSwap extends Vue {
 
   async fetch() {
-    // await this.$store.dispatch('tokens/fetchTokens');
-    await this.$store.dispatch('tokens/getTokensFromExchanges');
-    console.log(this.$store.state.tokens.tokenExchanges.gemini);
-    // this.$store.dispatch('tokens/setDefaultToken');
+    // await this.$store.dispatch('fetchTokens');
+    await this.$store.dispatch('getTokensFromExchanges');
+    console.log(this.$store.state.tokenExchanges.gemini);
+    // this.$store.dispatch('setDefaultToken');
   }
 
   mounted(): void {

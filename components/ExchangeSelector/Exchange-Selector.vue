@@ -1,18 +1,16 @@
 <template>
-  <Modal v-if="$store.state.tokenSelectorIsOpen">
-    <div class="token-selector">
-      <div class="token-selector__container">
-        <div class="token-selector__upper">
-          <Token-Selector-Header />
-          <Token-Selector-Search />
-          <Token-Selector-Commons />
+  <Modal v-if="$store.state.exchangeSelectorIsOpen">
+    <div class="exchange-selector">
+      <div class="exchange-selector__container">
+        <div class="exchange-selector__upper">
+          <Exchange-Selector-Header />
         </div>
-        <div></div>
-        <div class="token-selector__center">
-          <Token-Selector-List />
-        </div>
-        <div class="token-selector__bottom">
-          <Token-Selector-Footer />
+        <Separator />
+        <div class="exchange-selector__center">
+          <Exchange-Selector-Switch />
+          <Exchange-Selector-Search />
+          <Separator />
+          <Exchange-Selector-List />
         </div>
       </div>
     </div>
@@ -29,7 +27,7 @@ export default class TokenSelector extends Vue {
 </script>
 
 <style lang="scss" scoped>
-  .token-selector {
+  .exchange-selector {
     width: 50vw;
     margin: 10vh auto;
     background: #fff;
@@ -41,7 +39,7 @@ export default class TokenSelector extends Vue {
     box-shadow: rgba(47, 128, 237, 0.05) 0px 4px 8px 0px;
     padding: 0px;
     width: 50vw;
-    overflow: hidden;
+    overflow: hidden auto;
     align-self: center;
     max-width: 420px;
     max-height: 80vh;
@@ -50,7 +48,7 @@ export default class TokenSelector extends Vue {
     border-radius: 20px;
     width: 65vw;
     margin: 0px;
-
+    overflow: hidden;
 
     &__container {
       display: flex;
@@ -68,9 +66,13 @@ export default class TokenSelector extends Vue {
       padding: 20px;
     }
     &__center {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
       flex: 1 1 0%;
       position: relative;
-      overflow-y: scroll;
+      height: 40%;
     }
     &__bottom {
       width: 100%;

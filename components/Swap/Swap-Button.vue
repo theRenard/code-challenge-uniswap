@@ -1,5 +1,5 @@
 <template>
-  <button class="swap-button" @click="$store.dispatch('tokens/setDefaultTokens');">
+  <button class="swap-button" @click="$store.dispatch('setDefaultTokens');">
     <span>Enter an amount</span>
   </button>
 </template>

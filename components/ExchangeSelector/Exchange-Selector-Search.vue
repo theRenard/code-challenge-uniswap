@@ -1,33 +1,26 @@
 <template>
-  <div class="token-selector-search">
+  <div class="exchange-selector-search">
     <input
       id="token-search-input"
-      v-model="searchString"
       type="text"
-      placeholder="Search name or paste address"
+      placeholder="https:// or ipfs:// or ENS name"
       autocomplete="off" value="">
   </div>
 </template>
 
 <script lang="ts">
 
-import { Vue, Component, Watch } from 'nuxt-property-decorator';
+import { Vue, Component } from 'nuxt-property-decorator';
 
 @Component
-export default class TokenSelectorSearch extends Vue {
-  searchString = '';
-
-  @Watch('searchString')
-  onSearch(val: string) {
-    this.$store.commit('SET_SEARCH_STRING', { payload: val });
-  }
-
+export default class ExchangeSelectorSearch extends Vue {
 }
 </script>
 
 <style lang="scss" scoped>
-  .token-selector-search {
+  .exchange-selector-search {
     @include center;
+    padding: 20px;
     input {
       position: relative;
       display: flex;
