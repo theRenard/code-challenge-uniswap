@@ -46,6 +46,11 @@ export function openTokenSelector({ commit }, token) {
 }
 
 export function closeTokenSelector({ commit }) {
+  commit(CLOSE_TOKEN_SELECTOR);
+  commit(SET_SEARCH_STRING, { payload: '' });
+}
+
+export function closeExchangeSelector({ commit }) {
   commit(CLOSE_EXCHANGE_SELECTOR);
   commit(SET_SEARCH_STRING, { payload: '' });
 }
